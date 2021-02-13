@@ -350,6 +350,24 @@ print(iso("animal"))
 print(iso("malayalam"))
 print(iso("fruits"))
 
+#Compute the word frequency in given message
+
+def wc(str):  
+    wds = str.split()
+    c = dict()
+    for w in wds:
+        if w in c:
+            c[w] += 1
+        else:
+            c[w] = 1
+
+    return c
+
+print( wc('one plus one gives two'))
+
+
+
+
 
 
 
