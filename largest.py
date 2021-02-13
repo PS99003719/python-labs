@@ -365,6 +365,29 @@ def wc(str):
 
 print( wc('one plus one gives two'))
 
+#Given a number, find the largest number by shuffling the digits
+
+def max_num(inm):
+
+    s = str(num) 
+    c = [0 for x in range(10)] 
+    for i in range(len(s)): 
+        c[int(s[i])] = c[int(s[i])] +  1
+    r = 0
+    mul = 1
+
+    for i in range(10): 
+        while c[i] > 0: 
+            r = r + ( i * mul) 
+            c[i] = c[i] - 1
+            mul = mul* 10
+  
+    
+    return r
+    
+num =int(input("enter the number"))
+print (max_num(num) )
+
 
 
 
