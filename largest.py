@@ -297,6 +297,51 @@ def dist(l1):
        average=(total/k)*60
     return average
 
+#pascal triangle //
+def pascal_triangle(n):
+    for i in range(0, m):
+        for j in range(0, i+1):
+            print(int(ncr(i,j)), end=' ')
+        print("\n")
+
+#digital root //
+def dr(m):
+    i = m
+    r =0
+    while i> 0:
+        rm = i%10
+        i//= 10
+        r += rm
+    while r// 10 != 0:
+        r = dr(r)
+    return r
+
+
+#maximum nos by deleting a single digit //
+def max(n):
+    
+    l = []
+    m= str(n)
+    for i in m:
+        l.append(int(m.replace(i, '')))
+    return max(n)
+
+
+#number pyramid //
+def np(l):
+
+    k = l - 1
+
+    for m in range(1, l+1):
+        for n in range(0, k):
+            print(end=" ")
+        k-= 1
+        for n in range(1, m+1):
+            print(j, end=".")
+        
+        print("\n")
+
+
 
 
 
