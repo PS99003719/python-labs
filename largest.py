@@ -341,8 +341,14 @@ def np(l):
         
         print("\n")
 
+#isogram
 
+def iso(l1):
+    return len(l1) == len(set(l1.lower()))
 
+print(iso("animal"))
+print(iso("malayalam"))
+print(iso("fruits"))
 
 
 
