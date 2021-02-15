@@ -343,8 +343,8 @@ def np(l):
 
 #isogram
 
-def iso(l1):
-    return len(l1) == len(set(l1.lower()))
+def iso(a):
+    return len(a) == len(set(a.lower()))
 
 print(iso("animal"))
 print(iso("malayalam"))
@@ -408,9 +408,68 @@ def fun(ipt):
                  n //= 1000
          for y in lst:
              i+= str(y) + "."
-         return n[::-1]
+         return n[::-1]#malformed time string //
+def m_t(t_s):
+    st = ""
+    l1 = t_s.split(":")
+    l2 = []
+    for i in l1:
+        l2.append(int(i))
+    
+    if l2[2] >= 60:
+        l2[1] += l2[2] // 60
+        l2[2] %= 60
+    if l2[1] >= 60:
+        l2[0] += l2[1] // 60
+        l2[1] %= 60
+    if l2[0] > 23:
+        return None
+    
+    for i in l2:
+        st += str(i) + ":"
+    return st[:-1]
+
+#malformed time string //
+def m_t(t_s):
+    st = ""
+    l1 = t_s.split(":")
+    l2 = []
+    for i in l1:
+        l2.append(int(i))
+    
+    if l2[2] >= 60:
+        l2[1] += l2[2] // 60
+        l2[2] %= 60
+    if l2[1] >= 60:
+        l2[0] += l2[1] // 60
+        l2[1] %= 60
+    if l2[0] > 23:
+        return None
+    
+    for i in l2:
+        st += str(i) + ":"
+    return st[:-1]
 
 
+#malformed date string //
+def m_d(d_s):
+    a = ""
+    l = d_s.split("/")
+    l2 = []
+    for i in l:
+        l2.append(int(i))
+    if l2[2] < 0 or l2[2] > 9999:
+        return None
+    if l2[1] > 12:
+        l2[2] += 2[1] // 12
+        l2[1] %= 12
+    if (l2[0] > 30 and l2[1] in [4,6,9,11]) or (l2[0] > 31 and l2[1] in [1,3,5,7,8,10,12]) or (l2[0] > 28 and l2[1] == 2):
+        l2[1] += l2[0] // 30
+        l2[0] %= 30
+
+    for i in l2:
+        a+= str(i) + "/"
+    return a[:-1]
 
 
 
