@@ -388,6 +388,28 @@ def max_num(inm):
 num =int(input("enter the number"))
 print (max_num(num) )
 
+#ip into integer //
+def fun(ipt):
+    s = ""
+    
+    if type(ipt) == str:
+        result = ipt.split(".")
+        for x in result:
+            n += x
+        return int(n)
+    elif type(ipt) == int:
+         lst = []
+         i= ipt
+         while n > 0:
+             if n%1000 > 255:
+                 return 0
+             else:
+                 lst.append(n%1000)
+                 n //= 1000
+         for y in lst:
+             i+= str(y) + "."
+         return n[::-1]
+
 
 
 
